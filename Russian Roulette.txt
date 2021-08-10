@@ -1,0 +1,87 @@
+
+import sys
+import time
+
+
+import random
+
+def wheel():
+  
+  number = random.randint(0,36)
+  for x in range(number+1):
+#print(x,end = " ")
+
+
+
+
+
+
+    time.sleep(0.1)
+    sys.stdout.write("\033[1;31m")  #red[1;31m  #blue[1;34m 
+    sys.stdout.write(str(x) + " ")
+    sys.stdout.flush()
+
+
+
+
+
+  return number
+
+
+  
+
+def main():
+  choice = input('Do you want to pick a \nA) single number \nB) even/odd \nC) range\n')
+
+  if choice == 'a':
+    single = int(input('Pick the number:'))
+    number = wheel()
+    if single == number:
+      print('You won!!')
+    else:
+      print('You lost')
+
+
+  if choice == 'b':
+    oden = input('Do you want even or odd?')
+    number = wheel()
+    if oden == 'even':
+      if number%2 == 0:
+        print('You Won!!!')
+      else:
+        print('You lost :( ')
+    if oden == 'odd':
+      if number%2 == 0:
+        print('You lost :(')
+      else:
+        print('You Won!!! ')
+
+
+
+
+  if choice == 'c':
+    range_1 = input('Which range do you chose? a)1-12 b)13-24 c)25-36')
+    number = wheel()
+    if range_1 == 'a':
+      if number > 0 and number < 13:
+        print('You Won!!!')
+      else:
+        print('You Lost :(') 
+    if range_1 == 'b':
+      if number > 12 and number < 25:
+        print('You Won!!!')
+      else:
+        print('You Lost :(') 
+    if range_1 == 'c':
+      if number > 23 and number < 37:
+        print('You Won!!!')
+      else:
+        print('You Lost :(') 
+#        quit = input('do you want to quit?')
+        
+
+
+
+
+#This game continues on until the user enters "quit"
+main()
